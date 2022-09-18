@@ -1,0 +1,35 @@
+body{
+    background-color: black;
+}
+
+h1{
+    color: white;
+}
+
+div{ 
+    text-align: center;
+}
+
+button{
+    height: 2.5em;
+    width: 5.5 em;
+    border: none;
+    color: white;
+}
+
+/* pra ficar a mãozinha quando o cursor ficar em cima do botão */
+button:hover{
+    cursor: pointer;
+}
+
+.start-btn{
+    background-color: rgb(19, 92, 19);
+}
+
+.pause-btn{
+    background-color: grey;
+}
+
+.stop-btn{
+    background-color: red;
+}
