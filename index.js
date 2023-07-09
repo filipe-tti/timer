@@ -3,7 +3,9 @@ var min=0
 var interval
 var hr =0
 
-function twoDigits (digit){
+var isRunning = false
+
+const twoDigits  = (digit) =>{
     if(digit<10){
         return('0'+digit)
     }else{
@@ -12,32 +14,41 @@ function twoDigits (digit){
 
 }
 
-function start(){
-    watch()
-    interval = setInterval(watch,1)
+const start = ()=> {
+    
+    if(!isRunning){
+        watch()
+        interval = setInterval(watch,1) 
+        
+    }
+
+    isRunning = true
+    
 }
 
-function pause(){
+const pause =() =>{
     clearInterval(interval)
+    isRunning=false
 }
 
-function stop(){
+const stop=()=>{
     clearInterval(interval)
     min = 0
     sec = 0
     document.getElementById('watch').innerText='00:00:00'
+    isRunning=false
 }
 
 
-function watch(){
+const watch = ()=> {
     sec++
     if(sec==60){
         min++
         sec=0
         
         if(min==60){
-            hr++
             min = 0
+            hr++
         }
 
     }
